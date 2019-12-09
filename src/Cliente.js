@@ -47,13 +47,7 @@ class Cliente extends React.Component {
     editClienteData: {
       id: '',
       nome: '',
-      cpf: '',
-      cep: '',
-      uf: '',
-      cidade: '',
-      bairro: '',
-      logradouro: '',
-      complemento: '',
+      cpf: '',     
     },
     editEnderecoData: {
       cep: '',
@@ -190,13 +184,13 @@ class Cliente extends React.Component {
 
     updateCliente(id) {    
       // console.log('updateCliente(id): ', id);
-      let {nome, cpf,cep,uf,cidade,bairro,logradouro,complemento} = this.state.editClienteData;        
+      let {nome, cpf} = this.state.editClienteData;        
       axios.put('/clientes/' + id, {
-        id, nome, cpf,cep,uf,cidade,bairro,logradouro,complemento
+        id, nome, cpf
       }).then((response) => {     
         this._refreshClientes();
         this.setState({
-          editClienteModal: false, editClienteData: {id: '', nome: '', cpf: '',cep: '',uf: '',cidade: '',bairro: '',logradouro: '',complemento: ''}
+          editClienteModal: false, editClienteData: {id: '', nome: '', cpf: ''}
         })
         
       })
