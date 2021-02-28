@@ -204,10 +204,13 @@ class Cliente extends React.Component {
   }
 
   _refreshClientes() {
-    axios.get('/clientes').then(response => {
-      this.setState({
-        clientes: response.data
-      })
+    // axios.get('/clientes').then(response => {
+    //   this.setState({
+    //     clientes: response.data
+    //   })
+    // })
+    this.setState({
+      clientes: {id:1,nome:'teste'}
     })
   }
 
